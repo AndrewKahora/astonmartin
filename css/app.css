@@ -21,11 +21,11 @@ body
 
 		#mosaic
 		{
-			background-image: url('http://burnmind.com/demos/mosaic/bottom.jpg');
+			background-image: url(../images/vulcan2.jpg);
 		}
 
 		#mosaic span.hover
 		{
 			float: left;
-			background-image: url('http://burnmind.com/demos/mosaic/top.jpg');
+			background-image: url('../images/vulcan4.jpg');
 		}
