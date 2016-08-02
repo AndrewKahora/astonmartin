@@ -29,3 +29,24 @@
 					totalSlides = $slides.length,
 					$pagerList = $container.find('.pager_list');
 					prefix = prefix($container[0]);
+                function animateSlides(activeNdx, newNdx){
+					function cleanUp(){
+						$slides.eq(activeNdx).removeAttr('style');
+						activeSlide = newNdx;
+						fading = false;
+						waitForNext();
+					};
+					if(fading || activeNdx == newNdx){
+						return false;
+					};
+					fading = true;
+					$pagers.removeClass('active').eq(newSlide).addClass('active');
+					$slides.eq(activeNdx).css('z-index', 3);
+					$slides.eq(newNdx).css({
+						'z-index': 2,
+						'opacity': 1
+					});
+					if(!prefix){
+						$slides.eq(activeNdx).animate({'opacity': 0}, config.fadeDur,
+						function(){
+							cleanUp();
