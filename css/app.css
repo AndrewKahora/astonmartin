@@ -1,12 +1,78 @@
-*{margin:0; padding:0;}
-@import url(http://fonts.googleapis.com/css?family=Raleway:400, 900);
-body{background-color:#000; font-family: 'Raleway', sans-serif;
-  color: #fff;}
-header h1{
-  text-align: center;
-  font-weight: bold;
-  margin: 20px 0;
+body{
+  font-family: "futura", arial;
 }
-	ul{position:relative;}
-	li{position:absolute;top:0;left:0;list-style:none; float:left;}
-	.fdiv{display:block; width:100%; height:100%; overflow:hidden; margin:0 auto; background-color:#ccccff;}
+
+.fader{
+    position: relative;
+    padding-top: 60%;
+    overflow: hidden;
+}
+
+.fader .slide{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    opacity: 0;
+}
+
+.fader img.slide{
+    height: auto;
+}
+
+.fader .prev,
+.fader .next{
+  position: absolute;
+  height: 80px;
+  line-height: 55px;
+  width: 50px;
+  font-size: 100px;
+  text-align: center;
+  color: #fff;
+  top: 50%;
+  left: 0;
+  z-index: 4;
+  margin-top: -25px;
+  cursor: pointer;
+  opacity: .7;
+  transition: all 150ms;
+}
+
+.fader .prev:hover,
+.fader .next:hover{
+  opacity: 1;
+}
+
+.fader .next{
+  left: auto;
+  right: 0;
+}
+
+.fader .pager_list{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  bottom: 0;
+  text-align: center;
+  z-index: 4;
+}
+
+.fader .pager_list li{
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 0 7px;
+  background: #fff;
+  opacity: .7;
+  text-indent: -999px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 150ms;
+}
+
+.fader .pager_list li:hover,
+.fader .pager_list li.active{
+  opacity: 1;
+}
