@@ -1,12 +1,31 @@
-$(document).ready(function(){
-		var counter=0;
-		$('#fslider li').css('opacity','0');
-		$('#fslider li:eq('+counter+')').css('opacity','1');
-
-		setInterval(function(){
-			$('#fslider li:eq('+counter+')').animate({opacity:0}, 1000);
-			counter++;
-			counter = (counter > ($('#fslider li').size() - 1))?0:counter;
-			$('#fslider li:eq('+counter+')').animate({opacity:1}, 1000);
-		}, 2000);
-	})
+(function($){
+	function prefix(el){
+		var prefixes = ["Webkit", "Moz", "O", "ms"];
+		for (var i = 0; i < prefixes.length; i++){
+			if (prefixes[i] + "Transition" in el.style){
+				return '-'+prefixes[i].toLowerCase()+'-';
+			};
+		};
+		return "transition" in el.style ? "" : false;
+	};
+	var methods = {
+		init: function(settings){
+			return this.each(function(){
+				var config = {
+					slideDur: 7000,
+					fadeDur: 800
+				};
+				if(settings){
+					$.extend(config, settings);
+				};
+				this.config = config;
+				var $container = $(this),
+					slideSelector = '.slide',
+					fading = false,
+					slideTimer,
+					activeSlide,
+					newSlide,
+					$slides = $container.find(slideSelector),
+					totalSlides = $slides.length,
+					$pagerList = $container.find('.pager_list');
+					prefix = prefix($container[0]);
