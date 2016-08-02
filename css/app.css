@@ -9,4 +9,4 @@ header h1{
 }
 	ul{position:relative;}
 	li{position:absolute;top:0;left:0;list-style:none; float:left;}
-	.fdiv{display:block; width:800px; height:300px; overflow:hidden; margin:0 auto; background-color:#ccccff;}
+	.fdiv{display:block; width:100%; height:100%; overflow:hidden; margin:0 auto; background-color:#ccccff;}
