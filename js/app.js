@@ -50,3 +50,64 @@
 						$slides.eq(activeNdx).animate({'opacity': 0}, config.fadeDur,
 						function(){
 							cleanUp();
+                            });
+					} else {
+						var styles = {};
+						styles[prefix+'transition'] = 'opacity '+config.fadeDur+'ms';
+						styles['opacity'] = 0;
+						$slides.eq(activeNdx).css(styles);
+						var fadeTimer = setTimeout(function(){
+							cleanUp();
+						},config.fadeDur);
+					};
+				};
+				function changeSlides(target){
+					if(target == 'next'){
+						newSlide = activeSlide + 1;
+						if(newSlide > totalSlides - 1){
+							newSlide = 0;
+						}
+					} else if(target == 'prev'){
+						newSlide = activeSlide - 1;
+						if(newSlide < 0){
+							newSlide = totalSlides - 1;
+						};
+					} else {
+						newSlide = target;
+					};
+					animateSlides(activeSlide, newSlide);
+				};
+                };
+				function waitForNext(){
+					slideTimer = setTimeout(function(){
+						changeSlides('next');
+					},config.slideDur);
+				};
+				for(var i = 0; i < totalSlides; i++){
+					$pagerList
+						.append('<li class="page" data-target="'+i+'">'+i+'</li>');
+				};
+				$container.find('.page').bind('click',function(){
+					var target = $(this).attr('data-target');
+					clearTimeout(slideTimer);
+					changeSlides(target);
+				});
+				var $pagers = $pagerList.find('.page');
+				$slides.eq(0).css('opacity', 1);
+				$pagers.eq(0).addClass('active');
+				activeSlide = 0;
+				waitForNext();
+			});
+		}
+	};
+	$.fn.easyFader = function(settings){
+		  return methods.init.apply(this, arguments);
+	};
+})(jQuery);
+
+$(function(){
+  $('#Fader').easyFader({
+    slideDur: 6000,
+    fadeDur: 800
+  });
+});
