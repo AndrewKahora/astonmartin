@@ -2746,8 +2746,8 @@ body {
   [data-whatinput='mouse'] .orbit-bullets {
     outline: 0; }
   .orbit-bullets button {
-    width: 1.2rem;
-    height: 1.2rem;
+    width: 2.2rem;
+    height: 2.2rem;
     margin: 0.1rem;
     background-color: #cacaca;
     border-radius: 50%; }
