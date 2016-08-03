@@ -2691,7 +2691,9 @@ body {
   position: relative;
   margin: 0;
   overflow: hidden;
-  list-style: none; }
+  list-style: none;
+  max-height: 100%;
+}
 
 .orbit-slide {
   width: 100%;
