@@ -1,32 +1,45 @@
-<!DOCTYPE.html>
-<head>
-  <meta charset="utf-8">
-  <title>The VULCAN</title>
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundation for Sites</title>
     <link rel="stylesheet" href="css/foundation.css">
-    <link rel="icon" type="image/gif/png" href="images/favicon5.png">
-    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
-    <link rel="stylesheet" href="app.js" />
-     <link rel="stylesheet" href="css/app.css" />
-    <link rel="stylesheet" type="text/css" href="css/demo.css" />
-    <link rel="stylesheet" type="text/css" href="css/component.css" />
-</head>
-
-<body>
+    <link rel="stylesheet" href="css/app.css">
+  </head>
+  <body>
     <div class="row">
       <div class="large-12 columns">
-<header>
-    <h1>Aston Martin</h1>
-  </header>
-
-    <div id="Fader" class="fader">
-  <img class="slide" src="images/vulcan1.jpg"/>
-  <img class="slide" src="images/vulcan2.jpg"/>
-  <img class="slide" src="images/vulcan3.jpg"/>
-  <img class="slide" src="images/vulcan4.jpg"/>
-    <div class="fader_controls">
-      <div class="page prev" data-target="prev">&lsaquo;</div>
-      <div class="page next" data-target="next">&rsaquo;</div>
-    </div>
-</div>
-  </div>
+          <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+  <ul class="orbit-container">
+    <button class="orbit-previous"><span class="show-for-sr">Previous Slide</span>&#9664;&#xFE0E;</button>
+    <button class="orbit-next"><span class="show-for-sr">Next Slide</span>&#9654;&#xFE0E;</button>
+    <li class="is-active orbit-slide">
+      <img class="orbit-image" src="assets/img/orbit/01.jpg" alt="Space">
+      <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+    </li>
+    <li class="orbit-slide">
+      <img class="orbit-image" src="images/vulcan1.jpg" alt="Space">
+      <figcaption class="orbit-caption">Lets Rocket!</figcaption>
+    </li>
+    <li class="orbit-slide">
+      <img class="orbit-image" src="images/vulcan2.jpg" alt="Space">
+      <figcaption class="orbit-caption">Encapsulating</figcaption>
+    </li>
+    <li class="orbit-slide">
+      <img class="orbit-image" src="images/vulcan3.jpg" alt="Space">
+      <figcaption class="orbit-caption">Outta This World</figcaption>
+    </li>
+    <li class="orbit-slide">
+      <img class="orbit-image" src="images/vulcan4.jpg" alt="Space">
+      <figcaption class="orbit-caption">Outta This World</figcaption>
+    </li>
+  </ul>
+  <nav class="orbit-bullets">
+    <button class="is-active" data-slide="0"><span class="show-for-sr">First slide details.</span><span class="show-for-sr">Current Slide</span></button>
+    <button data-slide="1"><span class="show-for-sr">Second slide details.</span></button>
+    <button data-slide="2"><span class="show-for-sr">Third slide details.</span></button>
+    <button data-slide="3"><span class="show-for-sr">Fourth slide details.</span></button>
+  </nav>
 </div>
